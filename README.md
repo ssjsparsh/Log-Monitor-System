@@ -1,10 +1,12 @@
 # Log-Monitor-System
-# ${1: log monitoring mock system}
 
 A monitoring system, which monitors 1000 servers. Each server has 2 CPUs. Each server generates a log for CPU usage every minute.
+
 Jobs:
-1,Generate mock log file,
-2,Query a period time's CPU usage on ip address
+
+  1,Generate mock log file,
+
+  2,Query a period time's CPU usage on ip address
 
 ## System Description
 
@@ -12,6 +14,7 @@ This system has two parts: log file generator, log file query
 
 Shared Library:
 These two parts share two libraries: IpConvertor and TimeConvertor
+  
   IpConvertor:
     1,convert string ip to int value
     int ip2int(string ip);
@@ -19,6 +22,7 @@ These two parts share two libraries: IpConvertor and TimeConvertor
     string int2ip(int ip);
     3,validate input ip string
     bool ipvalidate(string ip);
+  
   TimeConvertor:
     1,convert readable string time to unix timestamp
     time_t string2unix(string datetime);
@@ -26,7 +30,8 @@ These two parts share two libraries: IpConvertor and TimeConvertor
     string unix2string(time_t ts);
 
 Generator:
-    Generator ips to datapath
+  Generator ips to datapath
+  
     custom set:
         1,startIp
         2,startDatetime
@@ -38,14 +43,18 @@ Generator:
     simulator(string startIp, string startDatetime, string endDatetime, string dataPath, int numofserver, int numofcpu);
 
 Query system:
+
     1,read file into dictionary;
     bool init();
+    
     2, find set of records and display
     void search(string ipaddress, string serverid, string starttime, string endtime);
         2.1 binary search to find timestamp
         long findUnixTimestamp(vector<record>& records, time_t timestamp);
+        
     3,validate input string
     bool check(string ipaddress, string serverid, string starttime, string endtime);    
+    
     4, UI
 
 Bash script:
@@ -91,11 +100,17 @@ To run the interactive query tool:
 e.g ./query.sh ./data/log
 
 To Query:
+
 >QUERY 192.168.1.10 1 2014-10-31 00:00 2014-10-31 00:05
+
 CPU1 usage on 192.168.1.10:
+
 (2014-10-31 00:00, 90%), (2014-10-31 00:01, 89%), (2014-10-31 00:02, 87%), (2014-10-31 00:03,  94%) (2014-10-31 00:04, 88%)
+
 >QUERY 192.168.1.12 0 2014-10-31 00:00 2014-10-31 00:05
+
 CPU0 usage on 192.168.1.12:
+
 (2014-10-31 00:00, 90%), (2014-10-31 00:01, 89%), (2014-10-31 00:02, 87%), (2014-10-31 00:03,  94%), (2014-10-31 00:04, 88%)
 
 To exit:

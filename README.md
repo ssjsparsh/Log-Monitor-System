@@ -91,16 +91,18 @@ Go to root directory,
 
 1,
 To run the generator:
-bash ./generate.sh DATA_PATH
-e.g bash ./generate.sh ./data/log.txt
+>bash ./generate.sh DATA_PATH
+>e.g bash ./generate.sh ./data/log.txt
+
 this e.g will generate log.txt in data folder, and simulatormain in bin folder
 
 This will generate 1000 ip address from 192.168.1.1 ~ 192.168.4.232
 
 2,
 To run the interactive query tool:
-bash ./query.sh DATA_PATH
-e.g bash ./query.sh ./data/log.txt
+>bash ./query.sh DATA_PATH
+>e.g bash ./query.sh ./data/log.txt
+
 this e.g will generate querymain in bin folder
 
 To Query:

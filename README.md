@@ -144,9 +144,12 @@ exit
 
 ## Development log
 
-Total Time spent: 5.5 hours
+Total Time spent: 6 hours
+
 Design: 1.5 hours
-Implement and unit test: 3 hours
+
+Implement and test: 3.5 hours
+
 Doc and integration: 1 hour
 
 ## Author

@@ -91,13 +91,15 @@ Go to root directory,
 
 1,
 To run the generator:
-./generate.sh DATA_PATH
-e.g ./generate.sh ./data/log
+bash ./generate.sh DATA_PATH
+e.g bash ./generate.sh ./data/log.txt
+
+This will generate 1000 ip address from 192.168.1.1 ~ 192.168.4.232
 
 2,
 To run the interactive query tool:
-./query.sh DATA_PATH
-e.g ./query.sh ./data/log
+bash ./query.sh DATA_PATH
+e.g bash ./query.sh ./data/log.txt
 
 To Query:
 
@@ -118,6 +120,18 @@ To exit:
 >exit
 
 ## Test
+
+E.g:(Just copy and paste to your terminal)
+
+bash ./generate.sh ./data/log.txt
+bash ./query.sh ./data/log.txt
+QUERY 192.168.1.10 1 2014-10-31 00:00 2014-10-31 00:05
+QUERY 192.168.1.12 0 2014-10-31 00:00 2014-10-31 00:05
+QUERY 192.168.30.12 0 2014-10-31 00:00 2014-10-31 00:05
+QUERY 192.168.1.12 0 2014-01-31 00:00 2014-11-20 00:05
+QUERY 192.168.1.12 0 2014-10-31 08:00 2014-10-31 12:00
+QUERY 192.168.1.12 0 2014-10-31 03:00 2014-10-31 02:00
+exit
 
 see unit test file
 

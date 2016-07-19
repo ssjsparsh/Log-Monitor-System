@@ -15,19 +15,19 @@ This system has two parts: log file generator, log file query
 Shared Library:
 These two parts share two libraries: IpConvertor and TimeConvertor
   
-  IpConvertor:
-    1,convert string ip to int value
-    int ip2int(string ip);
-    2,convert int value to string ip
-    string int2ip(int ip);
-    3,validate input ip string
-    bool ipvalidate(string ip);
+    IpConvertor:
+      1,convert string ip to int value
+      int ip2int(string ip);
+      2,convert int value to string ip
+      string int2ip(int ip);
+      3,validate input ip string
+      bool ipvalidate(string ip);
   
-  TimeConvertor:
-    1,convert readable string time to unix timestamp
-    time_t string2unix(string datetime);
-    2,convert unix timestamp to readabel string time
-    string unix2string(time_t ts);
+    TimeConvertor:
+      1,convert readable string time to unix timestamp
+      time_t string2unix(string datetime);
+      2,convert unix timestamp to readabel string time
+      string unix2string(time_t ts);
 
 Generator:
   Generator ips to datapath
